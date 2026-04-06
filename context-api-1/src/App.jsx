@@ -1,3 +1,11 @@
-const { useContext } = require("react");
+import React from 'react'
 
-useContext()
+const App = () => {
+  return (
+    <div>
+      <h1>appclear</h1>
+    </div>
+  )
+}
+
+export default App
