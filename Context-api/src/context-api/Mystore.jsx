@@ -1,16 +1,12 @@
 import { createContext } from "react";
-
 // create context
 export const MyContext = createContext();
-
-
 const inc = ()=>{
-  
 }
 // provider component
 const MyStore = ({ children }) => {
   return (
-    <MyContext.Provider value={{}}>
+    <MyContext.Provider>
       {children}
       
     </MyContext.Provider>
