@@ -1,11 +1,24 @@
-import React from 'react'
+import React, { useContext } from "react";
+import { ContextProvider, Counter } from "./context/CountContext";
+import About from "./components/About";
+import Contact from "./components/Contact";
 
 const App = () => {
+  // console.log("app rendering...");
+  // let { count, setCount } = useContext(Counter);
+
   return (
     <div>
-      <h1>appclear</h1>
-    </div>
-  )
-}
+      <h1>App</h1>
+      <h1>Count is {0}</h1>
+      <button onClick={() => setCount((prev) => prev + 1)}>Increment</button>
 
-export default App
+      <ContextProvider>
+        <About />
+        <Contact />
+      </ContextProvider>
+    </div>
+  );
+};
+
+export default App;
