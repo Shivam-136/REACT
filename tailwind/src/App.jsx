@@ -305,7 +305,7 @@ const [data, setData] = useState([
   };
 
   return (
-    <div className="p-5 flex flex-col gap-5" >
+    <div className="p-5 flex flex-col gap-5  " >
       <div className="flex gap-5 flex-wrap ">
         {data.map((elem) => {
             return (
