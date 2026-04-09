@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useContext } from "react";
+import Login from './components/Login'
+import Register from "./components/Register"
+import { Auth } from "./context/AuthContext";
 
 const App = () => {
+
+  let { toggle, setToggle } = useContext(Auth);
+
   return (
     <div>
-      <h1 className='bg-amber-300 text-center '  >App</h1>
+      {toggle 
+        ? <Register setToggle={setToggle} />:<Login setToggle={setToggle} />
+      }
     </div>
   )
-
+}
 
 export default App
