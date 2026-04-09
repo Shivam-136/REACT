@@ -21,6 +21,7 @@ const App = () => {
         <div>
           <button
             onClick={() => {
+              
               localStorage.removeItem("log user");
               setLoggedInUser(null);
             }}
