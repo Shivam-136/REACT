@@ -5,10 +5,10 @@ const App = () => {
   return (
     <div>
       <h1>App</h1>
-      <h1>count is - {count}</h1>
-      <button onClick={()=>{setcount
-        (count + 1)
-      }}>INCREMENT</button>
+      <h2>count is - {count}</h2>
+      <button onClick={()=>{setcount(count + 1)}}>INCREMENT</button>
+      <button onClick={()=>{setcount(count - 1 )}}>DECREMENT</button>
+      <button onClick={()=>{setcount(count + 5 )}}>JUMP BY 5</button>
     </div>
   )
 }

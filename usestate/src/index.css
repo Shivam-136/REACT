@@ -1,0 +1,26 @@
+h1{
+    background-color: rgb(174, 8, 8);
+    text-align: center;
+}
+h2{
+    background-color: rgb(13, 12, 12);
+    color: antiquewhite;
+    padding: 50px 50px;
+    text-align: center;
+    
+}
+
+button{
+    padding: 20px;
+    margin: 20px;
+    border: none;
+    border-radius: 20px;
+    align-items: center;
+}
+body {
+    display: flex;              
+    justify-content: center;    
+    align-items: center;      
+    height: 100vh;              
+    margin: 0;
+}
