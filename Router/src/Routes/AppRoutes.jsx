@@ -1,18 +1,21 @@
 import React from 'react'
-import App from '../App'
-
 import { Route, Routes } from "react-router";
+import Home from '../Pages/Home';
+import Shop from '../Pages/Shop';
+import About from '../Pages/About';
 
 const AppRoutes = () => {
   return (
     <div>
-     <Routes>
-      <NavLink>to={'/'}Home</NavLink>
-      <NavLink>to={'/Shop'}Shop</NavLink>
-      <NavLink>to={'/About'}About</NavLink>
-     </Routes>
+      <Routes>
+    
+    <Route path='/' element={<Home/>} />
+    <Route path='Shop/' element={<Home/>} />
+    <Route path='About+/' element={<Home/>} />
+
+      </Routes>
     </div>
   )
-}
+}   
 
 export default AppRoutes
