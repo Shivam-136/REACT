@@ -8,14 +8,14 @@ const AppRoutes = () => {
   return (
     <div>
       <Routes>
-    
-    <Route path='/' element={<Home/>} />
-    <Route path='Shop/' element={<Home/>} />
-    <Route path='About+/' element={<Home/>} />
+
+        <Route path='/' element={<Home />} />
+        <Route path='Shop/' element={<Shop />} />
+        <Route path='About+/' element={<About />} />
 
       </Routes>
     </div>
   )
-}   
+}
 
 export default AppRoutes
