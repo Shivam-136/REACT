@@ -24,7 +24,7 @@ if (!product) {
 }
 
   return (
-    <div className="p-5 text-white border w-150 ml-50 rounded-2xl mt-5">
+    <div className="p-5 text-black border w-150 ml-50 rounded-2xl mt-5">
       <h1 className="text-4xl mb-5">{product.title}</h1>
       <img src={product.image} alt="" className="w-60 mb-5" />
       <h2 className="text-2xl text-green-400">₹ {product.price}</h2>

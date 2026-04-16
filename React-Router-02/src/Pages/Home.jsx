@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <div className="p-6 space-y-10 ">
 
-      <div className=" from-blue-500 to-purple-600 text-white p-2 rounded-xl text-center">
+      <div className=" from-blue-500 to-purple-600 text-black p-2 rounded-xl text-center">
         <h1 className="text-4xl font-bold">Welcome to Our Store 🛒</h1>
         <p className="mt-3">Best products at best prices</p>
         <button className="mt-5 bg-white text-black px-5 py-2 rounded">
@@ -26,7 +26,6 @@ const Home = () => {
         </button>
       </div>
 
-{/* 🚀 Call To Action */}
       <div className="text-center ">
         <h2 className="text-2xl font-semibold">Explore More Products</h2>
         <p className="mt-2">Click below to visit shop page</p>
@@ -39,7 +38,6 @@ const Home = () => {
 
       <div >
         <h2 className="text-2xl font-bold mb-5  ">Featured Products</h2>
-
         <div className="grid grid-cols-4 gap-5  ">
           {products.map((item) => (
             <div key={item.id} className="border p-4 rounded shadow hover:shadow-lg   border-b-blue-800">

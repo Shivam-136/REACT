@@ -6,7 +6,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <div className="w-72 bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl  transition duration-300  border border-blue-900 ">
-      {/* Image */}
+
       <div
         onClick={() => navigate(`/pd/${product.id}`)}
         className="h-48 w-full overflow-hidden"
@@ -18,19 +18,16 @@ const ProductCard = ({ product }) => {
         />  
       </div>
 
-      {/* Content */}
+
       <div className="p-4">
-        {/* Title */}
         <h2 className="text-lg font-semibold text-gray-800 truncate">
           {product.title}
         </h2>
 
-        {/* Description */}
         <p className="text-sm text-gray-500 mt-1 line-clamp-2">
           {product.description}
         </p>
 
-        {/* Price + Rating */}
         <div className="flex items-center justify-between mt-3">
           <span className="text-xl font-bold text-green-600">
             ₹{product.price}
@@ -45,5 +42,4 @@ const ProductCard = ({ product }) => {
     </div>
   );
 };
-
 export default ProductCard;
