@@ -5,7 +5,7 @@ const ProductCard = ({ product }) => {
   let navigate = useNavigate();
 
   return (
-    <div className="w-72 bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+    <div className="w-72 bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl  transition duration-300  border border-blue-900 ">
       {/* Image */}
       <div
         onClick={() => navigate(`/pd/${product.id}`)}
@@ -15,7 +15,7 @@ const ProductCard = ({ product }) => {
           src={product.image}
           alt={product.title}
           className="w-full h-full object-cover hover:scale-105 transition duration-300"
-        />
+        />  
       </div>
 
       {/* Content */}
@@ -38,7 +38,7 @@ const ProductCard = ({ product }) => {
         </div>
 
         {/* Button */}
-        <button className="w-full mt-4 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+        <button className="w-full mt-4  bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
           Add to Cart
         </button>
       </div>
