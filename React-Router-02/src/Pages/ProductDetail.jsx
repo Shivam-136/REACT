@@ -16,7 +16,7 @@ const ProductDetail = () => {
     }
   };
 
-  getProduct();
+  getProduct(); 
 }, [id]);
 
 if (!product) {
