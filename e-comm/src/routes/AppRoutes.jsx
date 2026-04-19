@@ -4,6 +4,7 @@ import Home from '../pages/Home'
 import Shop from '../pages/Shop'
 import About from '../pages/About'
 import Login from '../pages/Login'
+import Mode from '../pages/Mode'
 
 
 const AppRoutes = () => {
@@ -14,6 +15,7 @@ const AppRoutes = () => {
         <Route path='Shop/' element={<Shop />} />
         <Route path='About/' element={<About />} />
         <Route path='Login/' element={<Login />} />
+        <Route path='Mode/' element={<Mode />} />
       </Routes>
     </div>
   )
