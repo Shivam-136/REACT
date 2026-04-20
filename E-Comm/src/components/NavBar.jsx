@@ -7,10 +7,13 @@ const Navbar = () => {
             <h1>Logo</h1>
             <div className='flex gap-10'>
                 <NavLink to="/"> Home </NavLink>
-                <NavLink to="/shop"> Shop </NavLink>
-                <NavLink to="/about"> About </NavLink>
+                <NavLink to="/Users">Users </NavLink>
+                <NavLink to="/Cart">Cart </NavLink>
             </div>
-            <div>Sign in</div>
+            <div>
+                <button className="px-5 py-2 rounded cursor-pointer">Login</button>
+            </div>
+
         </div>
     )
 }
