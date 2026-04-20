@@ -8,7 +8,7 @@ const CartPage = () => {
 
   return (
     <div className="flex flex-wrap">
-      {cartItems.map((elem) => {
+      {cartItems.map((elem) => { 
         return <ProductCard product={elem} />;
       })}
     </div>

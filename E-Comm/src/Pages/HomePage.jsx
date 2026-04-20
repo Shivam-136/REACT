@@ -1,30 +1,27 @@
-import React, { useContext,useEffect,useState   } from 'react'
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
-import { Product } from '../context/productContext'
+import { Product } from "../context/productContext";
 import ProductCard from "../components/ProductCard";
 
-
-
 const HomePage = () => {
-  const { setProducts, products,cartItems } = useContext(Product)
+  let { setProducts, products, cartItems } = useContext(Product);
 
   let fetchProducts = async () => {
     try {
       let res = await axios.get("https://fakestoreapi.com/products");
       console.log(res);
-      setProducts(res.data)
+      setProducts(res.data);
     } catch (error) {
-      console.log('error in product api',error);
+      console.log("error in product apis", error);
     }
-  }
-  useEffect(() => {
-    fetchProducts()
-  }, [])
-  
-  
+  };
 
- return (
-    <div className="flex flex-col flex-wrap gap-6 ">
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  return (
+    <div className="flex flex-col gap-6">
       <h1 className="text-3xl font-semibold">All products</h1>
       <div className="grid grid-cols-4">
         {products.map((elem) => {
@@ -36,4 +33,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage
+export default HomePage;  ``

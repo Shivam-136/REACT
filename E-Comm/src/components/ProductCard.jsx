@@ -9,7 +9,7 @@ const ProductCard = ({ product, quantity }) => {
   let { setCartItems } = useContext(Product);
 
   return (
-    <div className="w-72 bg-white rounded-2xl  shadow-md overflow-hidden hover:shadow-xl  transition duration-300 mt-5 border border-red-700 ml-10">
+    <div className="w-72 bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 border border-red-600 ml-10 mt-10 ">
       {/* Image */}
       <div
         onClick={() => navigate(`/products/details/${product.id}`)}
