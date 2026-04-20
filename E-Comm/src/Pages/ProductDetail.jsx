@@ -30,7 +30,7 @@ const ProductDetail = () => {
 
         {/* Left - Image */}
         <div className="flex-1 flex justify-center items-center">
-          <img
+          <img      
             src={singleProduct.image}
             alt=""
             className="h-80 object-contain"
@@ -46,8 +46,7 @@ const ProductDetail = () => {
           <p className="text-2xl text-green-600 font-semibold">
             ₹{singleProduct.price}
           </p>
-
-
+          
           {/* Total Price */}
           <p className="text-lg text-gray-700">
             Total: ₹{(singleProduct.price * quantity).toFixed(2)}
