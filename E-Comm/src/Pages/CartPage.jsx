@@ -1,11 +1,18 @@
-import React from 'react'
+import React, { useContext } from "react";
+import { Product } from "../context/productContext";
+import ProductCard from "../components/ProductCard";
+import { useLocation } from "react-router";
 
 const CartPage = () => {
-  return (
-    <div>
-      <h1>Cart</h1>
-    </div>
-  )
-}
+  let { cartItems } = useContext(Product);
 
-export default CartPage
+  return (
+    <div className="flex flex-wrap">
+      {cartItems.map((elem) => {
+        return <ProductCard product={elem} />;
+      })}
+    </div>
+  );
+};
+
+export default CartPage;
