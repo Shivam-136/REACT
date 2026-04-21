@@ -11,7 +11,7 @@ const Navbar = () => {
                 <NavLink to="/Cart">Cart </NavLink>
             </div>
             <div>
-                <button className="px-5 py-2 rounded cursor-pointer">Login</button>
+                <button  className="px-5 py-2 rounded cursor-pointer text-blue-200">Login</button>
             </div>
         </div>
     )
