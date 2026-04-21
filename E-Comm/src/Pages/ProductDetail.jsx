@@ -25,7 +25,7 @@ const ProductDetail = () => {
   }
 
   return (
-    <div className="min-h-screen w-full flex justify-center items-center bg-gray-100 p-5">
+    <div className="min-h-screen w-full flex justify-center items-center bg-gray-100 p-5 ">
       <div className="w-[90%] max-w-5xl bg-white shadow-lg rounded-2xl p-6 flex flex-col md:flex-row gap-8  border border-red-600   ">
 
         {/* Left - Image */}

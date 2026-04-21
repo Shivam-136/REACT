@@ -14,19 +14,11 @@ const CartPage = () => {
         cartItems.map((elem) => (
           <div key={elem.id}>
 
-            {/* Product Card */}
             <ProductCard
               product={elem}
               quantity={elem.quantity}
             />
-
-            {/* ⚡ Buy Now button (inside cart) */}
-            <button
-              className=" right-7  p-10 mt-2 bg-green-600 text-white py-2 rounded hover:bg-green-700"
-              onClick={() => alert(`Buying ${elem.title}`)}
-            >
-              Buy Now
-            </button>
+         
 
           </div>
         ))

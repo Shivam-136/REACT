@@ -4,6 +4,7 @@ import HomePage from "../pages/HomePage";
 import UsersPage from "../pages/UsersPage";
 import CartPage from "../pages/CartPage";
 import ProductDetails from "../pages/ProductDetail";
+import Login from "../components/Login";
 
 const AppRoutes = () => {
   return (
