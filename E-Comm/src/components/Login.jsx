@@ -1,17 +1,20 @@
-import React from "react";
-import { useForm } from "react-hook-form";
+import React, { useContext, useState } from "react";
 
-const Login = () => {
+import { useForm } from "react-hook-form";
+import { Auth } from "../context/AuthContext";
+
+const Login = ({setToggle}) => {
+
+  const {registerUsers , setLoggedInUser, } = useContext(Auth)
+
   const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors, isValid },
-  } = useForm({ mode: "onChange" });
+    register, handleSubmit,reset, formState:
+    { errors, isValid }, } = useForm({ mode: "onChange" });
+
+  
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-700 flex items-center justify-center px-4">
-      
       <form
         onSubmit={handleSubmit((data) => {
           console.log(data);
@@ -74,12 +77,13 @@ const Login = () => {
         >
           Login
         </button>
-
-        {/* Extra */}
+        
         <p className="text-sm text-center text-gray-500">
-          Don’t have an account?{" "}
-          <span className="text-blue-600 cursor-pointer hover:underline">
-            Sign up
+
+          Don't have an account?{" "}
+
+          <span   onClick={() => setToggle(true)} className="text-blue-600 cursor-pointer hover:underline">
+            Register here
           </span>
         </p>
       </form>
@@ -87,4 +91,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Login

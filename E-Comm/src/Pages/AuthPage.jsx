@@ -1,12 +1,19 @@
-import React from 'react'
-import Login from '../components/Login'
+import React, { useState } from "react";
+import Login from "../components/Login";
+import Register from "../components/Register";
 
 const AuthPage = () => {
-  return (
-    <div>
-      <Login/>
-    </div>
-  )
-}
+  const [toggle, setToggle] = useState(false);
 
-export default AuthPage; 
+  return (
+    <>
+      {toggle ? (
+        <Register setToggle={setToggle} />
+      ) : (
+        <Login setToggle={setToggle} />
+      )}
+    </>
+  );
+};
+
+export default AuthPage;
