@@ -1,48 +1,71 @@
-import React from 'react'
+import React, { useRef } from 'react'
+
 
 const App = () => {
+  const formRef = useRef({})
 
-   let handalSubmit = (e)=>{
+  let handalSubmit = (e) => {
     e.preventDefault();
 
-    
-   }
-  
-  return (
-    <div>
-      <h1>Form Handling</h1>
+    let { name, email, password } = formRef.current;
 
-      <form onSubmit={handalSubmit}>
-        
-        <div>
-          <label htmlFor="name">Name</label>  <br />
-          <input name="name" id='name' type="text" placeholder='Name' />
-        </div>
+    let data = {
+      name: name.value,
+      email: email.value,
+      password: password.value
+    }
 
-        <br />
+    console.log(data);
+  }
+    return (
+      <div>
+        <h1>Form Handling</h1>
 
-        <div>
-          <label htmlFor="email">Email</label> <br />
-          <input name="email" id='email' type="text" placeholder='Email' />
-        </div>
+        <form onSubmit={handalSubmit}>
 
-        <br />
+          <div>
+            <label htmlFor="name">Name</label>  <br />
+            <input
+              ref={(e) => (formRef.current.name = e)}
+              id='name'
+              type="text"
+              placeholder='Name' />
+          </div>
 
-        <div>
-          <label htmlFor="password">Password</label> <br />
-          <input name="password" id='password' type="password" placeholder='Password' />
-        </div>
+          <br />
 
-        <br />
+          <div>
+            <label htmlFor="email">Email</label> <br />
+            <input
+              ref={(e) => (formRef.current.email = e)}
 
-        <div>
-          <button type="submit">Submit</button>
-        </div>
+              id='email'
+              type="text"
+              placeholder='Email' />
+          </div>
 
-      </form>
+          <br />
 
-    </div>
-  )
+          <div>
+            <label htmlFor="password">Password</label> <br />
+            <input
+              ref={(e) => (formRef.current.password = e)}
+              id='password'
+              type="password"
+              placeholder='Password' />
+          </div>
+
+          <br />
+
+          <div>
+            <button>Submit</button>
+          </div>
+
+        </form>
+
+      </div>
+    )
+  }
 }
 
 export default App
