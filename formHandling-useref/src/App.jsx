@@ -56,13 +56,11 @@ const App = () => {
           </div>
 
           <br />
-
+          
           <div>
             <button>Submit</button>
           </div>
-
         </form>
-
       </div>
     )
   }
