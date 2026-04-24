@@ -12,7 +12,7 @@ const Login = ({setToggle}) => {
     { errors, isValid }, } = useForm({ mode: "onChange" });
     
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-700 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-linear-to-br from-gray-900 to-gray-700 flex items-center justify-center px-4">
       <form
         onSubmit={handleSubmit((data) => {
           console.log(data);
