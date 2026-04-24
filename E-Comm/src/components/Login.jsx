@@ -10,7 +10,6 @@ const Login = ({setToggle}) => {
   const {
     register, handleSubmit,reset, formState:
     { errors, isValid }, } = useForm({ mode: "onChange" });
-
     
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-700 flex items-center justify-center px-4">

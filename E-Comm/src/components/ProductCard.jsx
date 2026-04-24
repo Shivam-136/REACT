@@ -84,8 +84,6 @@ const ProductCard = ({ product, quantity }) => {
             </button>
           </div>
 
-
-
         ) : (
           <button
             onClick={() =>
