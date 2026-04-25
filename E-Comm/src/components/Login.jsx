@@ -5,6 +5,7 @@ import { Auth } from "../context/AuthContext";
 
 const Login = ({setToggle}) => {
   const {registerUser , setLoggedInUser, } = useContext(Auth)
+  
   const { register, handleSubmit,reset, formState:
     { errors, isValid }, } = useForm({ mode: "onChange" });
 
@@ -17,7 +18,7 @@ const Login = ({setToggle}) => {
     localStorage.setItem("log user", JSON.stringify(user));
 
     alert("user loggedin");
-    setLoggedInUSer(user);
+    setLoggedInUser(user);
     navigate("/");
 
 
