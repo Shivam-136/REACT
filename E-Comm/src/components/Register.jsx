@@ -19,17 +19,17 @@ const Register = ({ setToggle }) => {
     localStorage.setItem("reg users", JSON.stringify(updatedUsers));
     alert("User Registered ✅");
     reset();
-
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-gray-900 to-gray-700 flex items-center justify-center px-44">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-700 flex items-center justify-center px-4 sm:px-6 md:px-10">
+      
       <form
         onSubmit={handleSubmit(handleFormSubmit)}
-        className="bg-white w-full max-w-md p-8 rounded-2xl shadow-xl flex flex-col gap-5"
+        className="bg-white w-full max-w-md p-6 sm:p-8 rounded-2xl shadow-xl flex flex-col gap-5"
       >
         {/* Heading */}
-        <h2 className="text-2xl font-bold text-center text-gray-800">
+        <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-800">
           Register
         </h2>
 

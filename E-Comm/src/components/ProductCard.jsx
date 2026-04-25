@@ -3,14 +3,31 @@ import { useLocation, useNavigate } from "react-router";
 import { Product } from "../context/productContext";
 
 const ProductCard = ({ product, quantity }) => {
-  let { pathname } = useLocation();
-  let navigate = useNavigate();
-  let { setCartItems } = useContext(Product);
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+  const { cartItems, setCartItems } = useContext(Product);
 
-  // ➕ Increase Quantity
+
+  const addToCart = () => {
+    const exist = cartItems.find(item => item.id === product.id);
+
+    if (exist) {
+      setCartItems(prev =>
+        prev.map(item =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        )
+      );
+    } else {
+      setCartItems(prev => [...prev, { ...product, quantity: 1 }]);
+    }
+  };
+
+  // ➕ Increase
   const increaseQty = () => {
-    setCartItems((prev) =>
-      prev.map((item) =>
+    setCartItems(prev =>
+      prev.map(item =>
         item.id === product.id
           ? { ...item, quantity: item.quantity + 1 }
           : item
@@ -18,81 +35,85 @@ const ProductCard = ({ product, quantity }) => {
     );
   };
 
-  // ➖ Decrease Quantity
+  // ➖ Decrease
   const decreaseQty = () => {
-    setCartItems((prev) =>
+    setCartItems(prev =>
       prev
-        .map((item) =>
+        .map(item =>
           item.id === product.id
             ? { ...item, quantity: item.quantity - 1 }
             : item
         )
-        .filter((item) => item.quantity > 0) // remove if 0
+        .filter(item => item.quantity > 0)
     );
   };
 
   return (
-    <div className="w-72 bg-white rounded-2xl shadow-md overflow-hidden border border-red-600 ml-10 mt-10">
-      
+    <div className="w-full max-w-xs bg-white  dark:bg-gray-900 rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition">
+
       {/* Image */}
       <div
         onClick={() => navigate(`/products/details/${product.id}`)}
-        className="h-48 w-full overflow-hidden"
+        className="h-48  w-full overflow-hidden cursor-pointer"
       >
         <img
           src={product.image}
           alt={product.title}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain p-4 hover:scale-105 transition"
         />
       </div>
 
       {/* Content */}
-      <div className="p-4">
-        <h2 className="text-lg font-semibold truncate">
+      <div className="p-4 flex flex-col gap-2 text-black dark:text-white">
+        
+        <h2 className="text-sm font-semibold line-clamp-2">
           {product.title}
         </h2>
 
-        <p className="text-sm text-gray-500 line-clamp-2">
+        <p className="text-xs text-gray-500 line-clamp-2">
           {product.description}
         </p>
 
-        <span className="text-xl font-bold text-green-600">
+        <span className="text-lg font-bold text-green-600">
           ₹{product.price}
         </span>
 
-        {/* 🔥 Quantity Section */}
-        {pathname === "/cart" || quantity ? (
-          (pathname== '/'?<div className="flex items-center justify-between mt-4">
+        {/* 🔥 Cart Logic */}
+        {quantity ? (
+          <div className="flex items-center justify-between mt-3">
             
             <button
               onClick={decreaseQty}
-              className="px-3 py-1 bg-red-500 text-white rounded"
+              className="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600"
             >
               -
             </button>
 
             <span className="text-lg font-semibold">
-              {product.quantity || quantity}
-             
+              {quantity}
             </span>
 
             <button
               onClick={increaseQty}
-              className="px-3 py-1 bg-green-500 text-white rounded"
-            > 
+              className="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600"
+            >
               +
             </button>
-          </div>: <div className="borde text-black "> Productquantity - {product.quantity || quantity}</div>)
-
+          </div>
         ) : (
           <button
-            onClick={() =>
-              setCartItems((prev) => [...prev, { ...product, quantity: 1 }])
-            }
-            className="w-full mt-4 bg-blue-600 text-white py-2 rounded-lg"
+            onClick={addToCart}
+            className="w-full mt-3 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
           >
             Add to Cart
           </button>
+        )}
+
+        {/* 👇 Show quantity in cart page */}
+        {pathname === "/cart" && (
+          <p className="text-sm text-gray-400 mt-2">
+            Quantity: {quantity}
+          </p>
         )}
       </div>
     </div>
