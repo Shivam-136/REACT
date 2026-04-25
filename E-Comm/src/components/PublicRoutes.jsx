@@ -9,6 +9,8 @@ const PublicRoutes = () => {
         return <Navigate to={'/'}/>
     }
     return <Outlet/>
+    
+
 }
 
 export default PublicRoutes
