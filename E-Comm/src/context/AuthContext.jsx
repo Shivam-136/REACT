@@ -5,7 +5,7 @@ export const Auth = createContext();
 
 // ✅ Provider Component
 export const AuthContextProvider = ({ children }) => {
-  const [registerUser, setRegisterUser] = useState(null);
+  const [registerUser, setRegisterUser] = useState([]);
   const [loggedInUser, setLoggedInUser] = useState(null);
 
   return (

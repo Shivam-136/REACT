@@ -62,7 +62,7 @@ const ProductCard = ({ product, quantity }) => {
 
         {/* 🔥 Quantity Section */}
         {pathname === "/cart" || quantity ? (
-          <div className="flex items-center justify-between mt-4">
+          (pathname== '/'?<div className="flex items-center justify-between mt-4">
             
             <button
               onClick={decreaseQty}
@@ -82,7 +82,7 @@ const ProductCard = ({ product, quantity }) => {
             > 
               +
             </button>
-          </div>
+          </div>: <div className="borde text-black "> Productquantity - {product.quantity || quantity}</div>)
 
         ) : (
           <button

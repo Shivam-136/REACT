@@ -11,21 +11,19 @@ const Register = ({ setToggle }) => {
     formState: { errors, isValid },
   } = useForm({ mode: "onChange" });
 
-  const { registerUsers, setRegisterUsers } = useContext(Auth);
+  const { registerUser, setRegisterUser } = useContext(Auth);
 
   const handleFormSubmit = (data) => {
-    const updatedUsers = [...(registerUsers || []), { ...data, id: nanoid() }];
-
-    setRegisterUsers(updatedUsers);
+    const updatedUsers = [...registerUser, { ...data, id: nanoid() }];
+    setRegisterUser(updatedUsers);
     localStorage.setItem("reg users", JSON.stringify(updatedUsers));
-
     alert("User Registered ✅");
     reset();
-    setToggle(false); // switch to login
+
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-700 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-linear-to-br from-gray-900 to-gray-700 flex items-center justify-center px-44">
       <form
         onSubmit={handleSubmit(handleFormSubmit)}
         className="bg-white w-full max-w-md p-8 rounded-2xl shadow-xl flex flex-col gap-5"

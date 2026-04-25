@@ -4,20 +4,30 @@ import { useForm } from "react-hook-form";
 import { Auth } from "../context/AuthContext";
 
 const Login = ({setToggle}) => {
-
-  const {registerUsers , setLoggedInUser, } = useContext(Auth)
-
-  const {
-    register, handleSubmit,reset, formState:
+  const {registerUser , setLoggedInUser, } = useContext(Auth)
+  const { register, handleSubmit,reset, formState:
     { errors, isValid }, } = useForm({ mode: "onChange" });
+
+    const handleFormSubmit =(data)=>{
+      const user = registerUser.find(
+        (elem) => elem.email === data.email && elem.password === data.password
+      )
+        if (!user) return alert("User not found");
+
+    localStorage.setItem("log user", JSON.stringify(user));
+
+    alert("user loggedin");
+    setLoggedInUSer(user);
+    navigate("/");
+
+
+    }
     
   return (
     <div className="min-h-screen bg-linear-to-br from-gray-900 to-gray-700 flex items-center justify-center px-4">
+
       <form
-        onSubmit={handleSubmit((data) => {
-          console.log(data);
-          reset();
-        })}
+      onSubmit={handleSubmit(handleFormSubmit)}
         className="bg-white w-full max-w-md p-8 rounded-2xl shadow-xl flex flex-col gap-5"
       >
         {/* Heading */}
